@@ -1,26 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
+import { useEffect } from 'react';
 import './App.css';
 
-function App() {
+const App = () => {
+  useEffect(() => {
+    // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+    if (
+      localStorage.theme === 'dark' ||
+      (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+    ) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+
+    // localStorage.theme = 'light';
+    // localStorage.theme = 'dark';
+  });
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <h1 className="text-primary">Primary</h1>
+      <h1 className="text-secondary">Secondary</h1>
+      <h1 className="text-success">Success</h1>
+      <h1 className="text-error">Error</h1>
+      <h1 className="text-info">Info</h1>
+      <h1 className="text-warning">Warning</h1>
+      <p>測試</p>
+    </>
   );
-}
+};
 
 export default App;
