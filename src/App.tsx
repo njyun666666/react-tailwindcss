@@ -25,7 +25,7 @@ const App = () => {
       <h1 className="text-error">Error</h1>
       <h1 className="text-info">Info</h1>
       <h1 className="text-warning">Warning</h1>
-      <p>測試</p>
+      <p className="bg-[--color-primary]">測試</p>
     </>
   );
 };
