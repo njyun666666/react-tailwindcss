@@ -1,5 +1,8 @@
 import { useEffect } from 'react';
 import './App.css';
+import { RouterProvider } from 'react-router-dom';
+import router from './router';
+import { HelmetProvider } from 'react-helmet-async';
 
 const App = () => {
   useEffect(() => {
@@ -18,15 +21,9 @@ const App = () => {
   });
 
   return (
-    <>
-      <h1 className="text-primary">Primary</h1>
-      <h1 className="text-secondary">Secondary</h1>
-      <h1 className="text-success">Success</h1>
-      <h1 className="text-error">Error</h1>
-      <h1 className="text-info">Info</h1>
-      <h1 className="text-warning">Warning</h1>
-      <p className="bg-[--color-primary]">測試</p>
-    </>
+    <HelmetProvider>
+      <RouterProvider router={router} />
+    </HelmetProvider>
   );
 };
 
