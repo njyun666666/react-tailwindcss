@@ -7,7 +7,7 @@ const Page = ({ title, children }: { title: string; children: React.ReactNode })
       <Helmet>
         <title>{title} | react-tailwindcss</title>
       </Helmet>
-      <div className="bg-gray-500 p-3">{children}</div>
+      <div>{children}</div>
     </>
   );
 };

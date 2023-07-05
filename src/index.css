@@ -11,7 +11,8 @@
     --color-info: theme(colors.sky.600);
     --color-warning: theme(colors.orange.600);
     --color-basic: theme(colors.gray.800);
-    --color-basic-bg: theme(colors.gray.50);
+    --color-basic-bg: theme(colors.gray.100);
+    --color-header-bg: theme(colors.white);
   }
 
   html.dark {
@@ -22,7 +23,8 @@
     --color-info: theme(colors.sky.400);
     --color-warning: theme(colors.orange.400);
     --color-basic: theme(colors.gray.200);
-    --color-basic-bg: theme(colors.gray.950);
+    --color-basic-bg: #18181b;
+    --color-header-bg: theme(colors.black);
   }
 
   body {
