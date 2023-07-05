@@ -1,6 +1,7 @@
 const Nav = () => {
   return (
-    <nav className="h-full w-full bg-[--color-header-bg] p-2">
+    <nav className="h-full w-full  p-2">
+      Nav
       <p>
         Nav
         <br />
