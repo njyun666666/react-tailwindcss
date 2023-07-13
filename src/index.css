@@ -1,31 +1,67 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import './components/components.css';
 
 @layer base {
   :root {
-    --color-primary: theme(colors.purple.500);
-    --color-secondary: theme(colors.yellow.500);
-    --color-success: theme(colors.green.600);
-    --color-error: theme(colors.red.600);
-    --color-info: theme(colors.sky.600);
-    --color-warning: theme(colors.orange.600);
-    --color-basic: theme(colors.neutral.800);
-    --color-basic-bg: theme(colors.neutral.100);
+    --color-primary: theme(colors.purple.400);
+    --color-primary-hover: theme(colors.purple.300);
+
+    --color-secondary: theme(colors.yellow.400);
+    --color-secondary-hover: theme(colors.yellow.300);
+
+    --color-success: theme(colors.green.400);
+    --color-success-hover: theme(colors.green.300);
+
+    --color-error: theme(colors.red.400);
+    --color-error-hover: theme(colors.red.300);
+
+    --color-info: theme(colors.sky.400);
+    --color-info-hover: theme(colors.sky.300);
+
+    --color-warning: theme(colors.orange.400);
+    --color-warning-hover: theme(colors.orange.300);
+
+    --color-basic: theme(colors.neutral.400);
+    --color-basic-hover: theme(colors.neutral.300);
+
+    --color-transparent-hover: theme(colors.neutral.300);
+
+    --color-body-bg: theme(colors.neutral.100);
+    --color-text: theme(colors.neutral.800);
     --color-header-bg: theme(colors.white);
     --color-border: theme(colors.neutral.300);
   }
 
   html.dark {
     color-scheme: dark;
+
     --color-primary: theme(colors.purple.500);
-    --color-secondary: theme(colors.yellow.400);
-    --color-success: theme(colors.green.400);
+    --color-primary-hover: theme(colors.purple.600);
+
+    --color-secondary: theme(colors.yellow.500);
+    --color-secondary-hover: theme(colors.yellow.600);
+
+    --color-success: theme(colors.green.500);
+    --color-success-hover: theme(colors.green.600);
+
     --color-error: theme(colors.red.500);
-    --color-info: theme(colors.sky.400);
-    --color-warning: theme(colors.orange.400);
-    --color-basic: theme(colors.neutral.200);
-    --color-basic-bg: theme(colors.neutral.900);
+    --color-error-hover: theme(colors.red.700);
+
+    --color-info: theme(colors.sky.500);
+    --color-info-hover: theme(colors.sky.600);
+
+    --color-warning: theme(colors.orange.500);
+    --color-warning-hover: theme(colors.orange.600);
+
+    --color-basic: theme(colors.neutral.500);
+    --color-basic-hover: theme(colors.neutral.600);
+
+    --color-transparent-hover: theme(colors.neutral.600);
+
+    --color-body-bg: theme(colors.neutral.900);
+    --color-text: theme(colors.neutral.200);
     --color-header-bg: theme(colors.black);
     --color-border: theme(colors.neutral.700);
   }
@@ -35,7 +71,15 @@
   }
 
   body {
-    color: var(--color-basic);
-    background-color: var(--color-basic-bg);
+    color: var(--color-text);
+    background-color: var(--color-body-bg);
+  }
+
+  h1 {
+    @apply pb-5 text-3xl font-bold;
+  }
+
+  h2 {
+    @apply py-3 text-2xl font-bold;
   }
 }

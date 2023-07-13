@@ -1,0 +1,72 @@
+.button {
+  &:hover:enabled {
+    &.bg-primary {
+      background-color: var(--color-primary-hover);
+    }
+
+    &.bg-secondary {
+      background-color: var(--color-secondary-hover);
+    }
+
+    &.bg-success {
+      background-color: var(--color-success-hover);
+    }
+
+    &.bg-error {
+      background-color: var(--color-error-hover);
+    }
+
+    &.bg-info {
+      background-color: var(--color-info-hover);
+    }
+
+    &.bg-warning {
+      background-color: var(--color-warning-hover);
+    }
+
+    &.bg-basic {
+      background-color: var(--color-basic-hover);
+    }
+
+    &.bg-transparent {
+      background-color: var(--color-transparent-hover);
+    }
+  }
+
+  &.button-outline {
+    &:hover:enabled {
+      color: var(--color-basic-text);
+
+      &.primary {
+        background-color: var(--color-primary);
+      }
+
+      &.secondary {
+        background-color: var(--color-secondary);
+      }
+      &.success {
+        background-color: var(--color-success);
+      }
+
+      &.error {
+        background-color: var(--color-error);
+      }
+
+      &.info {
+        background-color: var(--color-info);
+      }
+
+      &.warning {
+        background-color: var(--color-warning);
+      }
+
+      &.basic {
+        background-color: var(--color-basic);
+      }
+
+      &.transparent {
+        background-color: var(--color-basic);
+      }
+    }
+  }
+}
