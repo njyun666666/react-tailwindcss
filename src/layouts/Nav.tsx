@@ -1,83 +1,10 @@
+import { NavLink } from 'react-router-dom';
+
 const Nav = () => {
   return (
-    <nav className="h-full w-full bg-[--color-header-bg] p-2">
-      <p>
-        Nav
-        <br />
-        Nav
-        <br />
-        Nav
-        <br />
-        Nav
-        <br />
-        Nav
-        <br />
-        Nav
-        <br />
-        Nav
-        <br />
-        Nav
-        <br />
-        Nav
-        <br />
-        Nav
-        <br />
-        Nav
-        <br />
-        Nav
-        <br />
-        Nav
-        <br />
-        Nav
-        <br />
-        Nav
-        <br />
-        Nav
-        <br />
-        Nav
-        <br />
-        Nav
-        <br />
-        Nav
-        <br />
-        Nav
-        <br />
-        Nav
-        <br />
-        Nav
-        <br />
-        Nav
-        <br />
-        Nav
-        <br />
-        Nav
-        <br />
-        Nav
-        <br />
-        Nav
-        <br />
-        Nav
-        <br />
-        Nav
-        <br />
-        Nav
-        <br />
-        Nav
-        <br />
-        Nav
-        <br />
-        Nav
-        <br />
-        Nav
-        <br />
-        Nav
-        <br />
-        Nav
-        <br />
-        Nav
-        <br />
-        -----------end----------
-      </p>
+    <nav className="flex h-full w-full flex-col p-2">
+      <NavLink to="">Home</NavLink>
+      <NavLink to="button">Button</NavLink>
     </nav>
   );
 };

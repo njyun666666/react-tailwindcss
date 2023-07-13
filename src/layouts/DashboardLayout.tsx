@@ -5,14 +5,14 @@ import Nav from './Nav';
 const DashboardLayout = () => {
   return (
     <>
-      <div className="fixed top-0 z-[100] w-full border-b">
+      <div className="fixed top-0 z-[100] w-full border-b bg-[--color-header-bg]">
         <Header />
       </div>
       <div className="h-screen">
-        <div className="fixed top-12 h-[calc(100%-theme(height.12))] w-60 overflow-y-auto">
+        <div className="fixed top-12 h-[calc(100%-theme(height.12))] w-60 overflow-y-auto bg-[--color-header-bg]">
           <Nav />
         </div>
-        <div className="grow pl-60 pt-12">
+        <div className="pl-60 pt-12">
           <div className="p-2">
             <Outlet />
           </div>

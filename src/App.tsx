@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
-import './App.css';
 import { RouterProvider } from 'react-router-dom';
 import router from './router';
 import { HelmetProvider } from 'react-helmet-async';
+import './icon';
 
 const App = () => {
   useEffect(() => {
