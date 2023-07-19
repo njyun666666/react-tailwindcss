@@ -1,6 +1,21 @@
+import { useState } from 'react';
 import { Button } from '../components';
+import { theme } from '../common/theme';
 
 const Header = () => {
+  const themeSetting = new theme();
+  const [themeMode, setThemeMode] = useState(themeSetting.mode);
+
+  const changeTheme = () => {
+    if (themeMode === 'dark') {
+      themeSetting.light();
+      setThemeMode('light');
+    } else {
+      themeSetting.dark();
+      setThemeMode('dark');
+    }
+  };
+
   return (
     <header className="flex h-12 w-full items-center justify-between px-5">
       <div className="flex items-center">
@@ -15,7 +30,10 @@ const Header = () => {
         <a href="https://github.com/njyun666666/react-tailwindcss" target="blank">
           <Button icon={['fab', 'github']}></Button>
         </a>
-        <Button icon={'gear'}></Button>
+        <Button
+          icon={themeMode === 'dark' ? ['far', 'lightbulb'] : ['fas', 'lightbulb']}
+          onClick={changeTheme}
+        ></Button>
         <Button icon={'user'}></Button>
       </div>
     </header>

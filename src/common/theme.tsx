@@ -32,3 +32,32 @@ export const colorMapping = {
     transparent: 'border-transparent',
   },
 };
+
+export type themeModeType = 'light' | 'dark';
+
+export class theme {
+  get mode() {
+    return localStorage.theme as themeModeType;
+  }
+
+  light() {
+    document.documentElement.classList.remove('dark');
+    localStorage.theme = 'light';
+  }
+
+  dark() {
+    document.documentElement.classList.add('dark');
+    localStorage.theme = 'dark';
+  }
+
+  checkMode() {
+    if (
+      this.mode === 'dark' ||
+      (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+    ) {
+      this.dark();
+    } else {
+      this.light();
+    }
+  }
+}
