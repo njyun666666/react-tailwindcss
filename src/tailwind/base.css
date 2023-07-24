@@ -1,0 +1,18 @@
+@tailwind base;
+
+* {
+  border-color: var(--color-border);
+}
+
+body {
+  color: var(--color-text);
+  background-color: var(--color-body-bg);
+}
+
+h1 {
+  @apply pb-5 text-3xl font-bold;
+}
+
+h2 {
+  @apply py-3 text-2xl font-bold;
+}

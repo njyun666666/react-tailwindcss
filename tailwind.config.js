@@ -1,7 +1,7 @@
 const colors = require('tailwindcss/colors');
 // const plugin = require('tailwindcss/plugin');
 // const defaultTheme = require('tailwindcss/defaultTheme');
-const mainColors = require('./main.colors');
+const mainColors = require('./src/tailwind/main.colors');
 
 delete colors['lightBlue'];
 delete colors['warmGray'];
