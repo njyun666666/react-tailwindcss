@@ -54,7 +54,7 @@ export const Button = ({
         {children && <span>{children}</span>}
       </div>
 
-      {loading && <Loading className="m-0" />}
+      {loading && <Loading />}
     </button>
   );
 };
