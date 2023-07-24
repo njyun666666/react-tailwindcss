@@ -3,15 +3,27 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames';
 import React from 'react';
 import { color, colorMapping } from '../../common/theme';
+import Loading from '../loading/Loading';
 
 export interface ButtonProps
   extends React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
   icon?: IconProp;
   color?: color;
   outline?: boolean;
+  loading?: boolean;
 }
 
-export const Button = ({ icon, color = 'transparent', outline, className, children, ...rest }: ButtonProps) => {
+export const Button = ({
+  icon,
+  color = 'transparent',
+  outline,
+  loading,
+  disabled,
+  className,
+  children,
+  type,
+  ...rest
+}: ButtonProps) => {
   let classStyle = '';
 
   if (outline) {
@@ -28,14 +40,24 @@ export const Button = ({ icon, color = 'transparent', outline, className, childr
           'button-outline': outline,
         },
         color,
-        'space-x-2 rounded px-1.5 py-0.5 font-bold disabled:opacity-30',
+        'rounded px-1.5 py-0.5 font-bold overflow-hidden relative',
         classStyle,
-        className
+        {
+          'cursor-default': loading,
+        },
+        className,
       )}
+      // eslint-disable-next-line react/button-has-type
+      type={type === undefined ? 'button' : type}
+      disabled={disabled || loading}
       {...rest}
     >
-      {icon && <FontAwesomeIcon icon={icon} />}
-      {children && <span>{children}</span>}
+      <div className="button-text space-x-1.5">
+        {icon && <FontAwesomeIcon icon={icon} />}
+        {children && <span>{children}</span>}
+      </div>
+
+      {loading && <Loading className="m-0" />}
     </button>
   );
 };
