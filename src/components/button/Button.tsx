@@ -42,9 +42,6 @@ export const Button = ({
         color,
         'rounded px-1.5 py-0.5 font-bold overflow-hidden relative',
         classStyle,
-        {
-          'cursor-default': loading,
-        },
         className,
       )}
       // eslint-disable-next-line react/button-has-type
