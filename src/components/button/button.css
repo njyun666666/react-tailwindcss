@@ -1,71 +1,38 @@
-.button {
-  &:hover:enabled {
-    &.bg-primary {
-      background-color: var(--color-primary-hover);
-    }
-
-    &.bg-secondary {
-      background-color: var(--color-secondary-hover);
-    }
-
-    &.bg-success {
-      background-color: var(--color-success-hover);
-    }
-
-    &.bg-error {
-      background-color: var(--color-error-hover);
-    }
-
-    &.bg-info {
-      background-color: var(--color-info-hover);
-    }
-
-    &.bg-warning {
-      background-color: var(--color-warning-hover);
-    }
-
-    &.bg-basic {
-      background-color: var(--color-basic-hover);
-    }
-
-    &.bg-transparent {
-      background-color: var(--color-transparent-hover);
-    }
-  }
-
-  &.button-outline {
-    &:hover:enabled {
-      color: var(--color-basic-text);
-
-      &.primary {
-        background-color: var(--color-primary);
+@each $color in var(--color-array) {
+  .button {
+    &.$(color) {
+      &:hover:enabled {
+        background-color: var(--color-$(color)-hover);
       }
 
-      &.secondary {
-        background-color: var(--color-secondary);
-      }
-      &.success {
-        background-color: var(--color-success);
-      }
+      &:disabled {
+        --rgb: var(--color-$(color)-rgb);
+        background-color: rgba(var(--rgb), 0.2);
 
-      &.error {
-        background-color: var(--color-error);
+        .button-text {
+          --text-rgb: var(--color-text-rgb);
+          color: rgba(var(--text-rgb), 0.2);
+        }
       }
+    }
 
-      &.info {
-        background-color: var(--color-info);
-      }
+    &.button-outline {
+      &.$(color) {
+        background-color: theme(colors.transparent);
 
-      &.warning {
-        background-color: var(--color-warning);
-      }
+        &:hover:enabled {
+          color: var(--color-text);
+          background-color: var(--color-$(color));
+        }
 
-      &.basic {
-        background-color: var(--color-basic);
-      }
+        &:disabled {
+          --rgb: var(--color-$(color)-rgb);
+          border-color: rgba(var(--rgb), 0.2);
 
-      &.transparent {
-        background-color: var(--color-basic);
+          .button-text {
+            color: rgba(var(--rgb), 0.2);
+          }
+        }
       }
     }
   }
