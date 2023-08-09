@@ -1,5 +1,6 @@
 :root {
   --color-array: primary, secondary, success, error, info, warning, basic, transparent;
+  --alpha: 0.3;
 
   --color-primary: theme(colors.purple.400);
   --color-primary-rgb: toRGB(theme(colors.purple.400));
@@ -30,7 +31,7 @@
   --color-basic-hover: theme(colors.neutral.300);
 
   --color-transparent: theme(colors.transparent);
-  --color-transparent-rgb: toRGB(theme(colors.transparent));
+  --color-transparent-rgb: toRGB(theme(colors.black));
   --color-transparent-hover: theme(colors.neutral.300);
 
   --color-body-bg: theme(colors.neutral.100);
@@ -75,7 +76,7 @@ html.dark {
   --color-basic-hover: theme(colors.neutral.600);
 
   --color-transparent: theme(colors.transparent);
-  --color-transparent-rgb: toRGB(theme(colors.transparent));
+  --color-transparent-rgb: toRGB(theme(colors.white));
   --color-transparent-hover: theme(colors.neutral.600);
 
   --color-body-bg: theme(colors.neutral.900);
