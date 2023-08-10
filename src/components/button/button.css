@@ -39,6 +39,5 @@
 }
 
 .button.transparent:hover:enabled {
-  --rgb: var(--color-transparent-rgb);
-  background-color: rgba(var(--rgb), var(--alpha));
+  @apply transparent-hover;
 }
