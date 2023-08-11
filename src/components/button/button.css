@@ -1,5 +1,5 @@
 @each $color in var(--color-array) {
-  .button {
+  .Button {
     &.$(color) {
       &:hover:enabled {
         background-color: var(--color-$(color)-hover);
@@ -9,14 +9,14 @@
         --rgb: var(--color-$(color)-rgb);
         background-color: rgba(var(--rgb), 0.2);
 
-        .button-text {
+        .Button-text {
           --text-rgb: var(--color-text-rgb);
           color: rgba(var(--text-rgb), 0.2);
         }
       }
     }
 
-    &.button-outline {
+    &.Button-outline {
       &.$(color) {
         background-color: theme(colors.transparent);
 
@@ -36,4 +36,8 @@
       }
     }
   }
+}
+
+.Button.transparent:hover:enabled {
+  @apply transparent-alpha;
 }

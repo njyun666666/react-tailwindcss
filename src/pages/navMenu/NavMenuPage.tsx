@@ -1,5 +1,6 @@
-import NavMenu, { NavMenuDataProps } from '../components/navMenu/NavMenu';
-import MenuText from '../components/navMenu/MenuText';
+import Page from '../Page';
+import NavMenu, { NavMenuDataProps } from '../../components/navMenu/NavMenu';
+import MenuText from '../../components/navMenu/MenuText';
 
 const menu: NavMenuDataProps[] = [
   {
@@ -92,11 +93,12 @@ const menu: NavMenuDataProps[] = [
   },
 ];
 
-const Nav = () => {
+const NavMenuPage = () => {
   return (
-    <nav className="flex h-full w-full flex-col p-2">
+    <Page title="NavMenu">
+      <h1>NavMenu</h1>
       <NavMenu data={menu} />
-    </nav>
+    </Page>
   );
 };
-export default Nav;
+export default NavMenuPage;

@@ -35,16 +35,13 @@ export const Button = ({
   return (
     <button
       className={classNames(
-        'button',
+        'Button',
         {
-          'button-outline': outline,
+          'Button-outline': outline,
         },
         color,
         'rounded px-1.5 py-0.5 font-bold overflow-hidden relative',
         classStyle,
-        {
-          'cursor-default': loading,
-        },
         className,
       )}
       // eslint-disable-next-line react/button-has-type
@@ -52,12 +49,12 @@ export const Button = ({
       disabled={disabled || loading}
       {...rest}
     >
-      <div className="button-text space-x-1.5">
+      <div className="Button-text space-x-1.5">
         {icon && <FontAwesomeIcon icon={icon} />}
         {children && <span>{children}</span>}
       </div>
 
-      {loading && <Loading className="m-0" />}
+      {loading && <Loading />}
     </button>
   );
 };

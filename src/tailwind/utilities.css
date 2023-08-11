@@ -1,1 +1,11 @@
 @tailwind utilities;
+
+.transparent-alpha {
+  --rgb: var(--color-transparent-rgb);
+  background-color: rgba(var(--rgb), var(--alpha));
+}
+
+.hover\:transparent-alpha:hover {
+  --rgb: var(--color-transparent-rgb);
+  background-color: rgba(var(--rgb), var(--alpha));
+}
