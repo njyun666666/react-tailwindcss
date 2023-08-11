@@ -30,22 +30,22 @@ const menu: NavMenuDataProps[] = [
     ],
   },
   {
-    id: 'Nav',
-    content: <MenuText icon={'star'} text="Nav" />,
+    id: 'NavMenu',
+    content: <MenuText icon={'star'} text="NavMenu" />,
     children: [
       {
-        id: 'Nav-1',
+        id: 'NavMenu-1',
         linkProps: {
           to: '/navMenu',
         },
-        content: <MenuText icon={'star'} text="Nav-1" />,
+        content: <MenuText icon={'star'} text="NavMenu-1" />,
       },
       {
-        id: 'Nav-2',
+        id: 'NavMenu-2',
         linkProps: {
           to: '/navMenu/2',
         },
-        content: <MenuText icon={'star'} text="Nav-2" />,
+        content: <MenuText icon={'star'} text="NavMenu-2" />,
       },
     ],
   },
