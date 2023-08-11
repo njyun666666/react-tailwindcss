@@ -1,4 +1,4 @@
-.loading .loading-img {
+.Loading .Loading-img {
   animation: Loading 0.25s infinite;
 
   @keyframes Loading {
