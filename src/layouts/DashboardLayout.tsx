@@ -9,7 +9,7 @@ const DashboardLayout = () => {
         <Header />
       </div>
       <div className="h-screen scrollbar">
-        <div className="fixed top-12 h-[calc(100%-theme(height.12))] w-60 overflow-y-hidden hover:overflow-y-auto bg-[--color-header-bg]">
+        <div className="fixed top-12 h-[calc(100%-theme(height.12))] w-60 overflow-y-auto bg-[--color-header-bg]">
           <Nav />
         </div>
         <div className="pl-60 pt-12">

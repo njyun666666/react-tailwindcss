@@ -1,6 +1,6 @@
 :root {
   --color-array: primary, secondary, success, error, info, warning, basic, transparent;
-  --alpha: 0.3;
+  --alpha: 0.2;
 
   --color-primary: theme(colors.purple.400);
   --color-primary-rgb: toRGB(theme(colors.purple.400));
