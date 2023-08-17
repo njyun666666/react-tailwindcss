@@ -29,7 +29,7 @@
           --rgb: var(--color-$(color)-rgb);
           border-color: rgba(var(--rgb), 0.2);
 
-          .button-text {
+          .Button-text {
             color: rgba(var(--rgb), 0.2);
           }
         }

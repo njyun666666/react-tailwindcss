@@ -1,4 +1,0 @@
-ul.NavMenu a.active {
-  --alpha: 0.1;
-  @apply transparent-alpha text-primary font-bold;
-}

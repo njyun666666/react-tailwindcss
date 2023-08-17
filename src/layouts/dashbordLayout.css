@@ -1,0 +1,34 @@
+.NavMenu-children {
+  @apply pl-0;
+}
+
+.NavMode-max .NavMenu-children,
+.NavMode-min .NavMenu-children {
+  @apply pl-3;
+}
+
+.NavMode-max ul.NavMenu a.active,
+.NavMode-min ul.NavMenu a.active {
+  --alpha: 0.1;
+  @apply transparent-alpha text-primary font-bold;
+}
+
+.NavMode-icon ul.NavMenu a.active .NavMenu-icon {
+  --alpha: 0.1;
+  @apply transparent-alpha text-primary font-bold rounded;
+}
+
+.NavMode-icon-open {
+  .NavMenu-children {
+    @apply pl-3;
+  }
+
+  ul.NavMenu a.active {
+    --alpha: 0.1;
+    @apply transparent-alpha text-primary font-bold rounded;
+
+    .NavMenu-icon {
+      @apply bg-transparent;
+    }
+  }
+}

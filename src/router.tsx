@@ -3,7 +3,6 @@ import DashboardLayout from './layouts/DashboardLayout';
 import DashboardPage from './pages/dashboard/DashboardPage';
 import ButtonPage from './pages/button/ButtonPage';
 import TreePage from './pages/tree/TreePage';
-import NavMenuPage from './pages/navMenu/NavMenuPage';
 
 const router = createBrowserRouter([
   {
@@ -17,14 +16,6 @@ const router = createBrowserRouter([
       {
         path: 'button',
         element: <ButtonPage />,
-      },
-      {
-        path: 'navMenu',
-        element: <NavMenuPage />,
-      },
-      {
-        path: 'navMenu/2',
-        element: <NavMenuPage />,
       },
       {
         path: 'tree',

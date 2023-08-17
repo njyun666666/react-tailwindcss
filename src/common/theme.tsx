@@ -1,3 +1,5 @@
+import { useEffect, useState } from 'react';
+
 export type color = 'primary' | 'secondary' | 'success' | 'error' | 'info' | 'warning' | 'basic' | 'transparent';
 
 export const colorMapping = {
@@ -34,6 +36,42 @@ export const colorMapping = {
 };
 
 export type themeModeType = 'light' | 'dark';
+export enum themeScreenEnum {
+  default = 0,
+  sm = 640,
+  md = 768,
+  lg = 1024,
+  xl = 1280,
+  '2xl' = 1536,
+}
+
+export const useThemeScreenMode = () => {
+  const getThemeScreenMode = () => {
+    if (window.innerWidth >= themeScreenEnum['2xl']) {
+      return themeScreenEnum['2xl'];
+    } else if (window.innerWidth >= themeScreenEnum.xl) {
+      return themeScreenEnum.xl;
+    } else if (window.innerWidth >= themeScreenEnum.lg) {
+      return themeScreenEnum.lg;
+    } else if (window.innerWidth >= themeScreenEnum.md) {
+      return themeScreenEnum.md;
+    } else if (window.innerWidth >= themeScreenEnum.sm) {
+      return themeScreenEnum.sm;
+    } else {
+      return themeScreenEnum.default;
+    }
+  };
+
+  const [themeScreenMode, setThemeScreenMode] = useState<themeScreenEnum>(getThemeScreenMode());
+
+  useEffect(() => {
+    window.addEventListener('resize', () => {
+      setThemeScreenMode(getThemeScreenMode());
+    });
+  }, []);
+
+  return themeScreenMode;
+};
 
 export class theme {
   get mode() {

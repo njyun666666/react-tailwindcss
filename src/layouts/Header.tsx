@@ -1,8 +1,14 @@
 import { useState } from 'react';
 import { Button } from '../components';
 import { theme } from '../common/theme';
+import { navModeType } from './DashboardLayout';
 
-const Header = () => {
+interface HeaderProps {
+  navMode: navModeType;
+  setNavOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const Header = ({ navMode, setNavOpen }: HeaderProps) => {
   const themeSetting = new theme();
   const [themeMode, setThemeMode] = useState(themeSetting.mode);
 
@@ -16,12 +22,19 @@ const Header = () => {
     }
   };
 
+  const navChange = () => {
+    setNavOpen(true);
+  };
+
   return (
-    <header className="flex h-12 w-full items-center justify-between px-5">
+    <header className="flex h-12 w-full items-center justify-between px-2">
       <div className="flex items-center">
-        <div className="pr-2 text-xl">
-          <Button icon={'bars'}></Button>
-        </div>
+        {navMode === 'min' && (
+          <div className="pr-2 text-xl">
+            <Button icon={'bars'} onClick={navChange}></Button>
+          </div>
+        )}
+
         <div className="pr-2 text-2xl">🚀</div>
         <div className="text-2xl">react-tailwindcss</div>
       </div>

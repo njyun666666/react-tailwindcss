@@ -22,7 +22,7 @@ interface TreeExpandProps extends React.DetailedHTMLProps<React.HTMLAttributes<H
 
 const TreeExpandIcon = ({ showIcon, expanded, className, ...rest }: TreeExpandProps) => {
   return (
-    <div {...rest} className={classNames('Tree-expand-icon w-6 h-6 flex justify-center items-center', className)}>
+    <div {...rest} className={classNames('Tree-expand-icon w-6 h-6 text-center', className)}>
       {showIcon && (
         <FontAwesomeIcon
           icon={'angle-right'}

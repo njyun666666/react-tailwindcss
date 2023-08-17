@@ -3,3 +3,4 @@
 @import './tailwind/components.css';
 @import './tailwind/utilities.css';
 @import './components/components.css';
+@import './layouts/layouts.css';
