@@ -2,15 +2,18 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames';
 import React, { forwardRef, useEffect, useRef, useState } from 'react';
 import { NavLink, NavLinkProps } from 'react-router-dom';
+import { IconProp } from '@fortawesome/fontawesome-svg-core';
 
 export interface NavMenuProps {
   data: NavMenuDataProps[];
   className?: string;
+  setNavOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 export interface NavMenuDataProps {
   id: string;
   linkProps?: NavLinkProps;
+  icon?: IconProp;
   content: React.ReactNode;
   children?: NavMenuDataProps[];
   expanded?: boolean;
@@ -24,7 +27,7 @@ interface NavMenuExpandProps extends React.DetailedHTMLProps<React.HTMLAttribute
 
 const NavMenuExpandIcon = ({ showIcon, expanded, className, ...rest }: NavMenuExpandProps) => {
   return (
-    <div {...rest} className={classNames('NavMenu-expand-icon w-6 h-6 flex justify-center items-center', className)}>
+    <div {...rest} className={classNames('NavMenu-expand-icon w-6 h-6 text-center', className)}>
       {showIcon && (
         <FontAwesomeIcon
           icon={'angle-right'}
@@ -39,7 +42,7 @@ const NavMenuExpandIcon = ({ showIcon, expanded, className, ...rest }: NavMenuEx
 };
 
 export const NavMenu = forwardRef<HTMLUListElement, NavMenuProps>(function NavMenuComponent(
-  { data, className }: NavMenuProps,
+  { data, className, setNavOpen }: NavMenuProps,
   ref,
 ) {
   const [list, setList] = useState(data);
@@ -104,12 +107,17 @@ export const NavMenu = forwardRef<HTMLUListElement, NavMenuProps>(function NavMe
     }, 300);
   };
 
+  const handleChangeOpen = () => {
+    setNavOpen(false);
+  };
+
   return (
     <ul className={classNames('NavMenu w-full', className)} ref={ref}>
       {list.map((item) => {
-        const itemStyle = classNames('mb-1 ');
-        const linkStyle = classNames('w-full flex items-center rounded cursor-pointer p-2 hover:transparent-alpha');
-        const contentStyle = classNames('grow');
+        const itemStyle = classNames('mb-1');
+        const iconStyle = classNames('NavMenu-icon w-10 text-center p-2 mr-1');
+        const linkStyle = classNames('w-full flex items-center rounded cursor-pointer hover:transparent-alpha');
+        const contentStyle = classNames('NavMenu-content w-[10.25rem]');
 
         if (item.children) {
           item.childrenRef = useRef<HTMLUListElement>(null);
@@ -120,7 +128,8 @@ export const NavMenu = forwardRef<HTMLUListElement, NavMenuProps>(function NavMe
             {!item.children ? (
               <li className={itemStyle}>
                 {item.linkProps && (
-                  <NavLink className={linkStyle} end {...item.linkProps}>
+                  <NavLink className={linkStyle} end {...item.linkProps} onClick={handleChangeOpen}>
+                    <div className={iconStyle}>{item.icon && <FontAwesomeIcon icon={item.icon} />}</div>
                     <div className={contentStyle}>{item.content}</div>
                     <NavMenuExpandIcon />
                   </NavLink>
@@ -130,6 +139,7 @@ export const NavMenu = forwardRef<HTMLUListElement, NavMenuProps>(function NavMe
               // have children
               <li>
                 <div className={classNames(itemStyle, linkStyle)} onClick={() => handleClick(item)}>
+                  <div className={iconStyle}>{item.icon && <FontAwesomeIcon icon={item.icon} />}</div>
                   <div className={contentStyle}>{item.content}</div>
                   <NavMenuExpandIcon showIcon expanded={item.expanded} />
                 </div>
@@ -137,12 +147,13 @@ export const NavMenu = forwardRef<HTMLUListElement, NavMenuProps>(function NavMe
                 <NavMenu
                   data={item.children}
                   className={classNames(
-                    'NavMenu-children pl-4 overflow-hidden will-change-[height] transition-[height] duration-300 ease-in-out',
+                    'NavMenu-children overflow-hidden will-change-[height,padding-left] transition-[height,padding-left] duration-300 ease-in-out',
                     {
                       'h-0': !item.expanded,
                     },
                   )}
                   ref={item.childrenRef}
+                  setNavOpen={setNavOpen}
                 />
               </li>
             )}
