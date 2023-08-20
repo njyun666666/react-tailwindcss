@@ -13,7 +13,7 @@ interface MenuTextProps {
 const MenuText = ({ icon, text, className }: MenuTextProps) => {
   return (
     <div className={classNames(className)}>
-      <FontAwesomeIcon icon={icon} className="pr-1 w-5" />
+      <FontAwesomeIcon icon={icon} className="w-5 pr-1" />
       <span>{text}</span>
     </div>
   );

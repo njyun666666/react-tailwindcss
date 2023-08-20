@@ -62,8 +62,8 @@
     "postcss-at-rules-variables": "^0.3.0",
     "postcss-each": "^1.1.0",
     "postcss-import": "^15.1.0",
-    "prettier": "^3.0.0",
-    "prettier-plugin-tailwindcss": "^0.3.0",
+    "prettier": "^3.0.2",
+    "prettier-plugin-tailwindcss": "^0.5.3",
     "tailwindcss": "^3.3.2"
   },
   "cracoConfig": "./craco.config.js"

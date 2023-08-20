@@ -10,12 +10,12 @@
 .NavMode-max ul.NavMenu a.active,
 .NavMode-min ul.NavMenu a.active {
   --alpha: 0.1;
-  @apply transparent-alpha text-primary font-bold;
+  @apply transparent-alpha font-bold text-primary;
 }
 
 .NavMode-icon ul.NavMenu a.active .NavMenu-icon {
   --alpha: 0.1;
-  @apply transparent-alpha text-primary font-bold rounded;
+  @apply transparent-alpha rounded font-bold text-primary;
 }
 
 .NavMode-icon-open {
@@ -25,7 +25,7 @@
 
   ul.NavMenu a.active {
     --alpha: 0.1;
-    @apply transparent-alpha text-primary font-bold rounded;
+    @apply transparent-alpha rounded font-bold text-primary;
 
     .NavMenu-icon {
       @apply bg-transparent;
