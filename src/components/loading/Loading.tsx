@@ -10,8 +10,8 @@ const Loading = ({ className }: LoadingProps) => {
     <>
       <div
         className={classNames(
-          'Loading absolute top-0 left-0 w-full h-full flex justify-center items-center ',
-          className,
+          'Loading absolute left-0 top-0 flex h-full w-full items-center justify-center ',
+          className
         )}
       >
         {/* <FontAwesomeIcon icon={'rocket'} beat /> */}

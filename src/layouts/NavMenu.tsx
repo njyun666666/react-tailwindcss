@@ -27,7 +27,7 @@ interface NavMenuExpandProps extends React.DetailedHTMLProps<React.HTMLAttribute
 
 const NavMenuExpandIcon = ({ showIcon, expanded, className, ...rest }: NavMenuExpandProps) => {
   return (
-    <div {...rest} className={classNames('NavMenu-expand-icon w-6 h-6 text-center', className)}>
+    <div {...rest} className={classNames('NavMenu-expand-icon h-6 w-6 text-center', className)}>
       {showIcon && (
         <FontAwesomeIcon
           icon={'angle-right'}
@@ -43,7 +43,7 @@ const NavMenuExpandIcon = ({ showIcon, expanded, className, ...rest }: NavMenuEx
 
 export const NavMenu = forwardRef<HTMLUListElement, NavMenuProps>(function NavMenuComponent(
   { data, className, setNavOpen }: NavMenuProps,
-  ref,
+  ref
 ) {
   const [list, setList] = useState(data);
 
@@ -147,10 +147,10 @@ export const NavMenu = forwardRef<HTMLUListElement, NavMenuProps>(function NavMe
                 <NavMenu
                   data={item.children}
                   className={classNames(
-                    'NavMenu-children overflow-hidden will-change-[height,padding-left] transition-[height,padding-left] duration-300 ease-in-out',
+                    'NavMenu-children overflow-hidden transition-[height,padding-left] duration-300 ease-in-out will-change-[height,padding-left]',
                     {
                       'h-0': !item.expanded,
-                    },
+                    }
                   )}
                   ref={item.childrenRef}
                   setNavOpen={setNavOpen}

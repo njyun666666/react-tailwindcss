@@ -152,39 +152,39 @@ const DashboardLayout = () => {
       <div className="fixed top-0 z-20 w-full border-b bg-[--color-header-bg]">
         <Header setNavOpen={setNavOpen} navMode={navMode} />
       </div>
-      <div className="h-screen scrollbar">
+      <div className="scrollbar h-screen">
         <div
           className={classNames(
-            'flex flex-col fixed z-10 overflow-x-hidden bg-[--color-header-bg] will-change-[max-width] transition-[max-width] duration-300 ease-in-out',
+            'fixed z-10 flex flex-col overflow-x-hidden bg-[--color-header-bg] transition-[max-width] duration-300 ease-in-out will-change-[max-width]',
             navMode === 'max' && 'NavMode-max top-12 h-[calc(100%-theme(height.12))] max-w-[15.5rem]',
             navMode === 'icon' && 'NavMode-icon top-12 h-[calc(100%-theme(height.12))] ',
             navMode === 'icon' && !navOpen && 'max-w-[3rem]',
             navMode === 'icon' && navOpen && 'NavMode-icon-open max-w-[15.5rem]',
-            navMode === 'min' && 'NavMode-min top-0 h-full z-50 max-w-0',
-            navMode === 'min' && navOpen && 'max-w-[15.5rem]',
+            navMode === 'min' && 'NavMode-min top-0 z-50 h-full max-w-0',
+            navMode === 'min' && navOpen && 'max-w-[15.5rem]'
           )}
           onMouseEnter={() => navMode === 'icon' && handleNavOpen()}
           onMouseLeave={() => navMode === 'icon' && handleNavClose()}
         >
           <nav
             className={classNames(
-              'grow w-60 flex-col py-2 px-1 overflow-y-auto',
+              'w-60 grow flex-col overflow-y-auto px-1 py-2',
               navMode === 'icon' && !navOpen && 'overflow-y-hidden',
-              navMode === 'icon' && navOpen && 'overflow-y-auto',
+              navMode === 'icon' && navOpen && 'overflow-y-auto'
             )}
           >
             <NavMenu data={menu} setNavOpen={setNavOpen} />
           </nav>
 
           {showNavExpandBtn && (navMode === 'icon' || navMode === 'max') && (
-            <div className={classNames('py-1 px-1 w-full')}>
+            <div className={classNames('w-full px-1 py-1')}>
               <Button
                 icon={'angles-right'}
                 className={classNames(
-                  'px-2 py-2 w-full will-change-[width,transform] transition-[width,transform] duration-300 ease-in-out',
+                  'w-full px-2 py-2 transition-[width,transform] duration-300 ease-in-out will-change-[width,transform]',
                   navMode === 'max' && '-rotate-180',
                   navMode === 'icon' && 'w-10 rotate-0',
-                  navMode === 'icon' && navOpen && 'w-full',
+                  navMode === 'icon' && navOpen && 'w-full'
                 )}
                 onClick={handleNavModeChange}
               ></Button>
@@ -193,15 +193,15 @@ const DashboardLayout = () => {
         </div>
 
         {navMode === 'min' && navOpen && (
-          <div onClick={handleNavClose} className={classNames('mask fixed h-full w-full z-40 top-0 left-0')}></div>
+          <div onClick={handleNavClose} className={classNames('mask fixed left-0 top-0 z-40 h-full w-full')}></div>
         )}
 
         <div
           className={classNames(
-            'will-change-[padding-left] transition-[padding-left] duration-300 ease-in-out',
+            'transition-[padding-left] duration-300 ease-in-out will-change-[padding-left]',
             navMode === 'max' && 'pl-[15.5rem] pt-12',
             navMode === 'icon' && 'pl-[3.25rem] pt-12',
-            navMode === 'min' && 'pl-0 pt-12',
+            navMode === 'min' && 'pl-0 pt-12'
           )}
         >
           <div className="p-2">

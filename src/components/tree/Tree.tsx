@@ -22,7 +22,7 @@ interface TreeExpandProps extends React.DetailedHTMLProps<React.HTMLAttributes<H
 
 const TreeExpandIcon = ({ showIcon, expanded, className, ...rest }: TreeExpandProps) => {
   return (
-    <div {...rest} className={classNames('Tree-expand-icon w-6 h-6 text-center', className)}>
+    <div {...rest} className={classNames('Tree-expand-icon h-6 w-6 text-center', className)}>
       {showIcon && (
         <FontAwesomeIcon
           icon={'angle-right'}
@@ -38,7 +38,7 @@ const TreeExpandIcon = ({ showIcon, expanded, className, ...rest }: TreeExpandPr
 
 export const Tree = forwardRef<HTMLUListElement, TreeProps>(function TreeComponent(
   { data, className }: TreeProps,
-  ref,
+  ref
 ) {
   const [list, setList] = useState(data);
 
@@ -121,10 +121,10 @@ export const Tree = forwardRef<HTMLUListElement, TreeProps>(function TreeCompone
                 <Tree
                   data={item.children}
                   className={classNames(
-                    'Tree-children pl-4 overflow-hidden will-change-[height] transition-[height] duration-300 ease-in-out',
+                    'Tree-children overflow-hidden pl-4 transition-[height] duration-300 ease-in-out will-change-[height]',
                     {
                       'h-0': !item.expanded,
-                    },
+                    }
                   )}
                   ref={item.childrenRef}
                 />
