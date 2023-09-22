@@ -5,6 +5,7 @@ import { themeScreenEnum, useThemeScreenMode } from '../common/theme';
 import classNames from 'classnames';
 import NavMenu, { NavMenuDataProps } from './NavMenu';
 import { Button } from '../components';
+import { faAngleRight, faGear, faHome, faStar, faTree } from '@fortawesome/free-solid-svg-icons';
 
 const menu: NavMenuDataProps[] = [
   {
@@ -12,12 +13,12 @@ const menu: NavMenuDataProps[] = [
     linkProps: {
       to: '/',
     },
-    icon: 'home',
+    icon: faHome,
     content: 'Home',
   },
   {
     id: '2',
-    icon: 'star',
+    icon: faStar,
     content: 'Button',
     children: [
       {
@@ -25,7 +26,7 @@ const menu: NavMenuDataProps[] = [
         linkProps: {
           to: '/button',
         },
-        icon: 'star',
+        icon: faStar,
         content: 'Button 2-1',
       },
       {
@@ -33,14 +34,14 @@ const menu: NavMenuDataProps[] = [
         linkProps: {
           to: '/button',
         },
-        icon: 'star',
+        icon: faStar,
         content: 'Button 2-2',
       },
     ],
   },
   {
     id: '3',
-    icon: 'tree',
+    icon: faTree,
     content: 'Tree',
     children: [
       {
@@ -49,7 +50,7 @@ const menu: NavMenuDataProps[] = [
         linkProps: {
           to: '/tree',
         },
-        icon: 'tree',
+        icon: faTree,
         content: 'Tree 3-1',
       },
       {
@@ -57,12 +58,12 @@ const menu: NavMenuDataProps[] = [
         linkProps: {
           to: '/tree/2',
         },
-        icon: 'tree',
+        icon: faTree,
         content: 'Tree 3-2',
       },
       {
         id: '3-3',
-        icon: 'gear',
+        icon: faGear,
         content: 'Tree 3-3',
         children: [
           {
@@ -70,7 +71,7 @@ const menu: NavMenuDataProps[] = [
             linkProps: {
               to: '/tree/x-1',
             },
-            icon: 'gear',
+            icon: faGear,
             content: 'x-1',
           },
           {
@@ -78,7 +79,7 @@ const menu: NavMenuDataProps[] = [
             linkProps: {
               to: '/tree/x-2',
             },
-            icon: 'gear',
+            icon: faGear,
             content: 'x-2',
           },
         ],
@@ -179,7 +180,7 @@ const DashboardLayout = () => {
           {showNavExpandBtn && (navMode === 'icon' || navMode === 'max') && (
             <div className={classNames('w-full px-1 py-1')}>
               <Button
-                icon={'angles-right'}
+                iconProps={{ icon: faAngleRight }}
                 className={classNames(
                   'w-full px-2 py-2 transition-[width,transform] duration-300 ease-in-out will-change-[width,transform]',
                   navMode === 'max' && '-rotate-180',

@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Button } from '../../components';
 import Page from '../Page';
 import Checkbox from '../../components/checkbox/Checkbox';
+import { faStar } from '@fortawesome/free-solid-svg-icons';
 
 const ButtonPage = () => {
   const [loading, setLoading] = useState(false);
@@ -75,91 +76,91 @@ const ButtonPage = () => {
 
       <h2>Icon</h2>
       <div className="space-x-3 space-y-3">
-        <Button color="primary" icon={'star'} loading={loading}>
+        <Button color="primary" iconProps={{ icon: faStar }} loading={loading}>
           primary
         </Button>
-        <Button color="secondary" icon={'star'} loading={loading}>
+        <Button color="secondary" iconProps={{ icon: faStar }} loading={loading}>
           secondary
         </Button>
-        <Button color="success" icon={'star'} loading={loading}>
+        <Button color="success" iconProps={{ icon: faStar }} loading={loading}>
           success
         </Button>
-        <Button color="error" icon={'star'} loading={loading}>
+        <Button color="error" iconProps={{ icon: faStar }} loading={loading}>
           error
         </Button>
-        <Button color="info" icon={'star'} loading={loading}>
+        <Button color="info" iconProps={{ icon: faStar }} loading={loading}>
           info
         </Button>
-        <Button color="warning" icon={'star'} loading={loading}>
+        <Button color="warning" iconProps={{ icon: faStar }} loading={loading}>
           warning
         </Button>
-        <Button color="basic" icon={'star'} loading={loading}>
+        <Button color="basic" iconProps={{ icon: faStar }} loading={loading}>
           basic
         </Button>
-        <Button color="transparent" icon={'star'} loading={loading}>
+        <Button color="transparent" iconProps={{ icon: faStar }} loading={loading}>
           transparent
         </Button>
       </div>
 
       <h2>Only Icon</h2>
       <div className="space-x-3 space-y-3">
-        <Button color="primary" icon={'star'} loading={loading}></Button>
-        <Button color="secondary" icon={'star'} loading={loading}></Button>
-        <Button color="success" icon={'star'} loading={loading}></Button>
-        <Button color="error" icon={'star'} loading={loading}></Button>
-        <Button color="info" icon={'star'} loading={loading}></Button>
-        <Button color="warning" icon={'star'} loading={loading}></Button>
-        <Button color="basic" icon={'star'} loading={loading}></Button>
-        <Button color="transparent" icon={'star'} loading={loading}></Button>
+        <Button color="primary" iconProps={{ icon: faStar }} loading={loading}></Button>
+        <Button color="secondary" iconProps={{ icon: faStar }} loading={loading}></Button>
+        <Button color="success" iconProps={{ icon: faStar }} loading={loading}></Button>
+        <Button color="error" iconProps={{ icon: faStar }} loading={loading}></Button>
+        <Button color="info" iconProps={{ icon: faStar }} loading={loading}></Button>
+        <Button color="warning" iconProps={{ icon: faStar }} loading={loading}></Button>
+        <Button color="basic" iconProps={{ icon: faStar }} loading={loading}></Button>
+        <Button color="transparent" iconProps={{ icon: faStar }} loading={loading}></Button>
       </div>
 
       <h2>Disabled</h2>
       <div className="space-x-3 space-y-3">
-        <Button disabled color="primary" icon={'star'} loading={loading}>
+        <Button disabled color="primary" iconProps={{ icon: faStar }} loading={loading}>
           primary
         </Button>
-        <Button disabled color="secondary" icon={'star'} loading={loading}>
+        <Button disabled color="secondary" iconProps={{ icon: faStar }} loading={loading}>
           secondary
         </Button>
-        <Button disabled color="success" icon={'star'} loading={loading}>
+        <Button disabled color="success" iconProps={{ icon: faStar }} loading={loading}>
           success
         </Button>
-        <Button disabled color="error" icon={'star'} loading={loading}>
+        <Button disabled color="error" iconProps={{ icon: faStar }} loading={loading}>
           error
         </Button>
-        <Button disabled color="info" icon={'star'} loading={loading}>
+        <Button disabled color="info" iconProps={{ icon: faStar }} loading={loading}>
           info
         </Button>
-        <Button disabled color="warning" icon={'star'} loading={loading}>
+        <Button disabled color="warning" iconProps={{ icon: faStar }} loading={loading}>
           warning
         </Button>
-        <Button disabled color="basic" icon={'star'} loading={loading}>
+        <Button disabled color="basic" iconProps={{ icon: faStar }} loading={loading}>
           basic
         </Button>
-        <Button disabled color="transparent" icon={'star'} loading={loading}>
+        <Button disabled color="transparent" iconProps={{ icon: faStar }} loading={loading}>
           transparent
         </Button>
       </div>
       <div className="space-x-3 space-y-3">
-        <Button disabled color="primary" icon={'star'} loading={loading} outline>
+        <Button disabled color="primary" iconProps={{ icon: faStar }} loading={loading} outline>
           primary
         </Button>
-        <Button disabled color="secondary" icon={'star'} loading={loading} outline>
+        <Button disabled color="secondary" iconProps={{ icon: faStar }} loading={loading} outline>
           secondary
         </Button>
-        <Button disabled color="success" icon={'star'} loading={loading} outline>
+        <Button disabled color="success" iconProps={{ icon: faStar }} loading={loading} outline>
           success
         </Button>
-        <Button disabled color="error" icon={'star'} loading={loading} outline>
+        <Button disabled color="error" iconProps={{ icon: faStar }} loading={loading} outline>
           error
         </Button>
-        <Button disabled color="info" icon={'star'} loading={loading} outline>
+        <Button disabled color="info" iconProps={{ icon: faStar }} loading={loading} outline>
           info
         </Button>
-        <Button disabled color="warning" icon={'star'} loading={loading} outline>
+        <Button disabled color="warning" iconProps={{ icon: faStar }} loading={loading} outline>
           warning
         </Button>
-        <Button disabled color="basic" icon={'star'} loading={loading} outline>
+        <Button disabled color="basic" iconProps={{ icon: faStar }} loading={loading} outline>
           basic
         </Button>
       </div>

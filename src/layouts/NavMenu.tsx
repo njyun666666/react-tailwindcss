@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import React, { forwardRef, useEffect, useRef, useState } from 'react';
 import { NavLink, NavLinkProps } from 'react-router-dom';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
+import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 
 export interface NavMenuProps {
   data: NavMenuDataProps[];
@@ -30,7 +31,7 @@ const NavMenuExpandIcon = ({ showIcon, expanded, className, ...rest }: NavMenuEx
     <div {...rest} className={classNames('NavMenu-expand-icon h-6 w-6 text-center', className)}>
       {showIcon && (
         <FontAwesomeIcon
-          icon={'angle-right'}
+          icon={faAngleRight}
           className={classNames('transition-[transform] duration-300 ease-in-out', {
             'rotate-0': !expanded,
             'rotate-90': expanded,

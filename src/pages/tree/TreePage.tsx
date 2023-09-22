@@ -3,6 +3,7 @@ import Tree, { TreeDataProps } from '../../components/tree/Tree';
 import Page from '../Page';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames';
+import { faGear, faHome, faStar, faTree } from '@fortawesome/free-solid-svg-icons';
 
 interface MenuTextProps {
   icon: IconProp;
@@ -22,45 +23,45 @@ const MenuText = ({ icon, text, className }: MenuTextProps) => {
 const menu: TreeDataProps[] = [
   {
     id: '1',
-    content: <MenuText icon={'home'} text="Home" />,
+    content: <MenuText icon={faHome} text="Home" />,
   },
   {
     id: '2',
-    content: <MenuText icon={'star'} text="Button" />,
+    content: <MenuText icon={faStar} text="Button" />,
     children: [
       {
         id: '2-1',
-        content: <MenuText icon={'star'} text="Button 2-1" />,
+        content: <MenuText icon={faStar} text="Button 2-1" />,
       },
       {
         id: '2-2',
-        content: <MenuText icon={'star'} text="Button 2-2" />,
+        content: <MenuText icon={faStar} text="Button 2-2" />,
       },
     ],
   },
   {
     id: '3',
-    content: <MenuText icon={'tree'} text="Tree" />,
+    content: <MenuText icon={faTree} text="Tree" />,
     children: [
       {
         id: '3-1',
-        content: <MenuText icon={'tree'} text="Tree 3-1" />,
+        content: <MenuText icon={faTree} text="Tree 3-1" />,
       },
       {
         id: '3-2',
-        content: <MenuText icon={'tree'} text="Tree 3-2" />,
+        content: <MenuText icon={faTree} text="Tree 3-2" />,
       },
       {
         id: '3-3',
-        content: <MenuText icon={'gear'} text="Tree 3-3" />,
+        content: <MenuText icon={faGear} text="Tree 3-3" />,
         children: [
           {
             id: 'Tree x-1',
-            content: <MenuText icon={'gear'} text="Tree x-1" />,
+            content: <MenuText icon={faGear} text="Tree x-1" />,
           },
           {
             id: 'Tree x-2',
-            content: <MenuText icon={'gear'} text="Tree x-2" />,
+            content: <MenuText icon={faGear} text="Tree x-2" />,
           },
         ],
       },

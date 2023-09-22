@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { Button } from '../components';
 import { theme } from '../common/theme';
 import { navModeType } from './DashboardLayout';
+import { faBars, faLightbulb, faUser } from '@fortawesome/free-solid-svg-icons';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
 interface HeaderProps {
   navMode: navModeType;
@@ -31,7 +33,7 @@ const Header = ({ navMode, setNavOpen }: HeaderProps) => {
       <div className="flex items-center">
         {navMode === 'min' && (
           <div className="pr-2 text-xl">
-            <Button icon={'bars'} onClick={navChange}></Button>
+            <Button iconProps={{ icon: faBars }} onClick={navChange}></Button>
           </div>
         )}
 
@@ -41,13 +43,10 @@ const Header = ({ navMode, setNavOpen }: HeaderProps) => {
       <div className=""></div>
       <div className="flex space-x-5">
         <a href="https://github.com/njyun666666/react-tailwindcss" target="blank">
-          <Button icon={['fab', 'github']}></Button>
+          <Button iconProps={{ icon: faGithub }}></Button>
         </a>
-        <Button
-          icon={themeMode === 'dark' ? ['far', 'lightbulb'] : ['fas', 'lightbulb']}
-          onClick={changeTheme}
-        ></Button>
-        <Button icon={'user'}></Button>
+        <Button iconProps={{ icon: faLightbulb }} onClick={changeTheme}></Button>
+        <Button iconProps={{ icon: faUser }}></Button>
       </div>
     </header>
   );

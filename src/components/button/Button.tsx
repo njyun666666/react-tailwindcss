@@ -1,9 +1,12 @@
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { FontAwesomeIcon, FontAwesomeIconProps } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames';
-import React from 'react';
+import React, { Dispatch, SetStateAction, useState } from 'react';
 import { color, colorMapping } from '../../common/theme';
 import Loading from '../loading/Loading';
+import { faCheckCircle, faCircle, faXmarkCircle } from '@fortawesome/free-solid-svg-icons';
+
+export type ButtonState = 'loading' | 'success' | 'error' | undefined;
 
 export interface ButtonProps
   extends React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
@@ -11,10 +14,12 @@ export interface ButtonProps
   color?: color;
   outline?: boolean;
   loading?: boolean;
+  iconProps?: FontAwesomeIconProps;
+  state?: ButtonState;
+  setState?: Dispatch<SetStateAction<ButtonState>>;
 }
 
 export const Button = ({
-  icon,
   color = 'transparent',
   outline,
   loading,
@@ -22,8 +27,12 @@ export const Button = ({
   className,
   children,
   type,
+  iconProps,
+  state,
+  setState,
   ...rest
 }: ButtonProps) => {
+  const [btnState, setBtnState] = useState<ButtonState>();
   let classStyle = '';
 
   if (outline) {
@@ -50,11 +59,36 @@ export const Button = ({
       {...rest}
     >
       <div className="Button-text space-x-1.5">
-        {icon && <FontAwesomeIcon icon={icon} />}
+        {iconProps && (
+          <FontAwesomeIcon
+            {...iconProps}
+            icon={iconProps.icon}
+            className={classNames(
+              {
+                'mr-1.5': children,
+              },
+              iconProps.className
+            )}
+          />
+        )}
+
         {children && <span>{children}</span>}
       </div>
 
-      {loading && <Loading />}
+      {!!btnState && (
+        <div className="text-foreground absolute left-0 top-0 flex h-full w-full items-center justify-center">
+          {btnState === 'loading' && (
+            <FontAwesomeIcon icon={faCircle} flip="horizontal" className="animate-[fa-flip_1s_ease-in-out_infinite]" />
+          )}
+
+          {btnState === 'success' && (
+            <FontAwesomeIcon icon={faCheckCircle} className="bg-background rounded-full text-success" />
+          )}
+          {btnState === 'error' && (
+            <FontAwesomeIcon icon={faXmarkCircle} className="bg-background rounded-full text-error" />
+          )}
+        </div>
+      )}
     </button>
   );
 };

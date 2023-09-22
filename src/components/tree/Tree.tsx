@@ -1,3 +1,4 @@
+import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames';
 import React, { forwardRef, useRef, useState } from 'react';
@@ -25,7 +26,7 @@ const TreeExpandIcon = ({ showIcon, expanded, className, ...rest }: TreeExpandPr
     <div {...rest} className={classNames('Tree-expand-icon h-6 w-6 text-center', className)}>
       {showIcon && (
         <FontAwesomeIcon
-          icon={'angle-right'}
+          icon={faAngleRight}
           className={classNames('transition-[transform] duration-300 ease-in-out', {
             'rotate-0': !expanded,
             'rotate-90': expanded,
