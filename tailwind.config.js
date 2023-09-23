@@ -24,6 +24,8 @@ module.exports = {
         info: 'var(--color-info)',
         warning: 'var(--color-warning)',
         basic: 'var(--color-basic)',
+        background: 'rgba(var(--color-background-rgb), <alpha-value>)',
+        foreground: 'rgba(var(--color-foreground-rgb), <alpha-value>)',
       },
     },
   },

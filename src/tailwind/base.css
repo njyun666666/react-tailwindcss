@@ -1,12 +1,11 @@
 @tailwind base;
 
 * {
-  border-color: var(--color-border);
+  @apply border-foreground/30;
 }
 
 body {
-  color: var(--color-text);
-  background-color: var(--color-body-bg);
+  @apply bg-background text-foreground;
 }
 
 h1 {

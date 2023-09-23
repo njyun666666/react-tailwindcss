@@ -10,7 +10,7 @@
         background-color: rgba(var(--rgb), 0.2);
 
         .Button-text {
-          --text-rgb: var(--color-text-rgb);
+          --text-rgb: var(--color-foreground-rgb);
           color: rgba(var(--text-rgb), 0.2);
         }
       }
@@ -21,7 +21,7 @@
         background-color: theme(colors.transparent);
 
         &:hover:enabled {
-          color: var(--color-text);
+          @apply text-foreground;
           background-color: var(--color-$(color));
         }
 

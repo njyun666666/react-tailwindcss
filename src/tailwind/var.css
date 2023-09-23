@@ -34,11 +34,11 @@
   --color-transparent-rgb: toRGB(theme(colors.black));
   --color-transparent-hover: theme(colors.neutral.300);
 
-  --color-body-bg: theme(colors.neutral.100);
-  --color-text: theme(colors.neutral.800);
-  --color-text-rgb: toRGB(theme(colors.neutral.800));
+  --color-background-rgb: toRGB(theme(colors.neutral.100));
+  --color-foreground-rgb: toRGB(theme(colors.neutral.800));
+
   --color-header-bg: theme(colors.white);
-  --color-border: theme(colors.neutral.300);
+
   --color-scrollbar: theme(colors.neutral.300);
   --color-scrollbar-hover: theme(colors.neutral.500);
   --color-scrollbar-active: theme(colors.neutral.600);
@@ -80,11 +80,11 @@ html.dark {
   --color-transparent-rgb: toRGB(theme(colors.white));
   --color-transparent-hover: theme(colors.neutral.600);
 
-  --color-body-bg: theme(colors.neutral.900);
-  --color-text: theme(colors.neutral.200);
-  --color-text-rgb: toRGB(theme(colors.neutral.200));
+  --color-background-rgb: toRGB(theme(colors.neutral.900));
+  --color-foreground-rgb: toRGB(theme(colors.neutral.200));
+
   --color-header-bg: theme(colors.black);
-  --color-border: theme(colors.neutral.700);
+
   --color-scrollbar: theme(colors.neutral.700);
   --color-scrollbar-hover: theme(colors.neutral.500);
   --color-scrollbar-active: theme(colors.neutral.400);

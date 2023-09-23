@@ -1,9 +1,8 @@
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon, FontAwesomeIconProps } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames';
-import React, { Dispatch, SetStateAction, useState } from 'react';
+import React, { Dispatch, SetStateAction, useEffect, useState } from 'react';
 import { color, colorMapping } from '../../common/theme';
-import Loading from '../loading/Loading';
 import { faCheckCircle, faCircle, faXmarkCircle } from '@fortawesome/free-solid-svg-icons';
 
 export type ButtonState = 'loading' | 'success' | 'error' | undefined;
@@ -13,7 +12,6 @@ export interface ButtonProps
   icon?: IconProp;
   color?: color;
   outline?: boolean;
-  loading?: boolean;
   iconProps?: FontAwesomeIconProps;
   state?: ButtonState;
   setState?: Dispatch<SetStateAction<ButtonState>>;
@@ -22,7 +20,6 @@ export interface ButtonProps
 export const Button = ({
   color = 'transparent',
   outline,
-  loading,
   disabled,
   className,
   children,
@@ -41,6 +38,43 @@ export const Button = ({
     classStyle = classNames(colorMapping.bg[color]);
   }
 
+  useEffect(() => {
+    switch (state) {
+      case 'loading':
+        setBtnState('loading');
+        if (setState) setState('loading');
+
+        break;
+
+      case 'success':
+        setBtnState('success');
+        if (setState) setState('success');
+
+        setTimeout(() => {
+          setBtnState(undefined);
+          if (setState) setState(undefined);
+        }, 1000);
+        break;
+
+      case 'error':
+        setBtnState('error');
+        if (setState) setState('error');
+
+        setTimeout(() => {
+          setBtnState(undefined);
+          if (setState) setState(undefined);
+          //
+        }, 1000);
+        break;
+
+      default:
+        setBtnState(undefined);
+        if (setState) setState(undefined);
+
+        break;
+    }
+  }, [setState, state]);
+
   return (
     <button
       className={classNames(
@@ -55,7 +89,7 @@ export const Button = ({
       )}
       // eslint-disable-next-line react/button-has-type
       type={type === undefined ? 'button' : type}
-      disabled={disabled || loading}
+      disabled={disabled || !!state}
       {...rest}
     >
       <div className="Button-text space-x-1.5">
